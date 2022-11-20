@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, Form
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 
 app = FastAPI()
 
@@ -40,6 +40,11 @@ async def post_data(
     }
 
 
-@app.get("/")
+@app.get("/favicon.ico", include_in_schema=False)
+async def get_favicon() -> FileResponse:
+    return FileResponse("favicon.ico")
+
+
+@app.get("/", include_in_schema=False)
 async def redirect_docs() -> RedirectResponse:
     return RedirectResponse("http://localhost:8000/docs")
