@@ -3,8 +3,10 @@ from typing import Any
 
 from fastapi import FastAPI, Form
 from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
+app.mount("/bootstrap", StaticFiles(directory="api/bootstrap5"), name="static")
 
 
 @app.get("/hello")

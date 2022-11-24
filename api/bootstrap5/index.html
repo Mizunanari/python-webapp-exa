@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bootstrap-example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="m-3 p-3 border" style="width: 500px;">
+        <form method="post" action="/html">
+            <div class="row mb-2">
+                <label class="col-sm-5 col-form-label">年月日の入力</label>
+                <div class="col-sm-5">
+                    <input type="date" name="calender" id="calender" class="form-control" />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">チェックボックス</label>
+                <div class="col-sm-5">
+                    <input type="checkbox" name="checkbox" id="checkbox" class="form-check-input" />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">テキストボックス</label>
+                <div class="col-sm-5">
+                    <input type="text" name="textbox" id="textbox" class="form-control" />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">数字の入力</label>
+                <div class="col-sm-5">
+                    <input type="number" name="number" id="number" class="form-control" />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">選択</label>
+                <div class="col-sm-5">
+                    <select name="select" id="select">
+                        <option value="none">--Please choose an option--</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="hamster">Hamster</option>
+                        <option value="parrot">Parrot</option>
+                        <option value="spider">Spider</option>
+                        <option value="goldfish">Goldfish</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">送信</button>
+        </form>
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
