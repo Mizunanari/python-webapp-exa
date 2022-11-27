@@ -6,7 +6,7 @@ from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
-app.mount("/bootstrap", StaticFiles(directory="api/bootstrap5"), name="static")
+app.mount("/", StaticFiles(directory="webapp"), name="static")
 
 
 @app.get("/hello")
@@ -21,7 +21,7 @@ def read_item(item_id: int, q: str) -> dict[str, Any]:
 
 @app.get("/html", response_class=HTMLResponse)
 def return_html() -> str:
-    with open(Path("api/index.html"), "r") as f:
+    with open(Path("api/example.html"), "r") as f:
         return f.read()
 
 
