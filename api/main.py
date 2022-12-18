@@ -6,7 +6,6 @@ from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
-app.mount("/", StaticFiles(directory="webapp"), name="static")
 
 
 @app.get("/hello")
@@ -21,7 +20,13 @@ def read_item(item_id: int, q: str) -> dict[str, Any]:
 
 @app.get("/html", response_class=HTMLResponse)
 def return_html() -> str:
-    with open(Path("api/example.html"), "r") as f:
+    with open(Path("public/example.html"), "r") as f:
+        return f.read()
+
+
+@app.get("/html2", response_class=HTMLResponse)
+def return_html2() -> str:
+    with open(Path("public/example2.html"), "r") as f:
         return f.read()
 
 
@@ -44,7 +49,7 @@ async def post_data(
 
 @app.get("/favicon.ico", include_in_schema=False)
 async def get_favicon() -> FileResponse:
-    return FileResponse("favicon.ico")
+    return FileResponse("public/favicon.ico")
 
 
 @app.get("/", include_in_schema=False)
